@@ -80,6 +80,10 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
+# Ensure staticfiles root exists in deployed environment
+if not STATIC_ROOT.exists():
+    STATIC_ROOT.mkdir(parents=True, exist_ok=True)
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
