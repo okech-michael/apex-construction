@@ -1,0 +1,244 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact Us &amp; Book Consultation – Apex Construction Limited{% endblock %}
+
+{% block content %}
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="{% url 'home' %}">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.8);">Contact</span>
+    </div>
+    <h1>Contact Us</h1>
+    <p>Reach out to our team for enquiries, quotes, or to schedule your free consultation. We're here to help bring your construction vision to life.</p>
+  </div>
+</section>
+
+
+<!-- ── CONTACT + BOOKING SECTION ─────────────────────────────── -->
+<section class="contact-section section-pad">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Info Panel -->
+      <div class="reveal-left">
+        <div class="contact-info-card">
+          <h3>Get In Touch</h3>
+          <p>We're ready to discuss your project. Reach us through any of the channels below or fill out the form.</p>
+
+          <div class="contact-info-item">
+            <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="c-info-text">
+              <strong>Phone / WhatsApp</strong>
+              <a href="tel:0714712531">0714 712 531</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+            <div class="c-info-text">
+              <strong>Email Address</strong>
+              <a href="mailto:info@apexconstruction.co.ke">info@apexconstruction.co.ke</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="c-info-text">
+              <strong>Physical Location</strong>
+              <span>Nyamasaria Shopping Centre,<br>Kisumu, Kenya</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="c-icon"><i class="fas fa-clock"></i></div>
+            <div class="c-info-text">
+              <strong>Working Hours</strong>
+              <span>Mon – Fri: 7:00 AM – 6:00 PM<br>Saturday: 8:00 AM – 4:00 PM</span>
+            </div>
+          </div>
+
+          <!-- Quick links -->
+          <div style="margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);">
+            <p style="color:rgba(255,255,255,.55);font-size:.82rem;margin-bottom:14px;letter-spacing:.06em;text-transform:uppercase;">Follow Us</p>
+            <div style="display:flex;gap:10px;">
+              <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--navy-dark)';this.style.borderColor='var(--accent)';" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)';this.style.borderColor='rgba(255,255,255,.2)';">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--navy-dark)';this.style.borderColor='var(--accent)';" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)';this.style.borderColor='rgba(255,255,255,.2)';">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--navy-dark)';this.style.borderColor='var(--accent)';" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)';this.style.borderColor='rgba(255,255,255,.2)';">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" style="width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:all .2s;" onmouseover="this.style.background='var(--accent)';this.style.color='var(--navy-dark)';this.style.borderColor='var(--accent)';" onmouseout="this.style.background='transparent';this.style.color='rgba(255,255,255,.6)';this.style.borderColor='rgba(255,255,255,.2)';">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forms Panel -->
+      <div class="form-section reveal">
+        <div class="forms-tabs">
+          <button class="forms-tab-btn active" data-tab="contact-form-panel">
+            <i class="fas fa-envelope" style="margin-right:6px;"></i> Send a Message
+          </button>
+          <button class="forms-tab-btn" data-tab="booking-form-panel">
+            <i class="fas fa-calendar-check" style="margin-right:6px;"></i> Book Consultation
+          </button>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-panel active" id="contact-form-panel">
+          <h3 style="margin-bottom:6px;">Send Us a Message</h3>
+          <p style="color:var(--text-body);font-size:.9rem;margin-bottom:24px;">Fill out the form below and our team will respond within 24 hours.</p>
+          <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="contact" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id_name">Full Name *</label>
+                {{ contact_form.name }}
+                {% if contact_form.name.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ contact_form.name.errors.0 }}</span>
+                {% endif %}
+              </div>
+              <div class="form-group">
+                <label for="id_email">Email Address *</label>
+                {{ contact_form.email }}
+                {% if contact_form.email.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ contact_form.email.errors.0 }}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="id_phone">Phone Number</label>
+              {{ contact_form.phone }}
+            </div>
+            <div class="form-group">
+              <label for="id_message">Your Message *</label>
+              {{ contact_form.message }}
+              {% if contact_form.message.errors %}
+                <span style="color:#ef4444;font-size:.8rem;">{{ contact_form.message.errors.0 }}</span>
+              {% endif %}
+            </div>
+            <button type="submit" class="btn btn-navy" style="width:100%;justify-content:center;">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Consultation Booking Form -->
+        <div class="form-panel" id="booking-form-panel">
+          <h3 style="margin-bottom:6px;">Book a Free Consultation</h3>
+          <p style="color:var(--text-body);font-size:.9rem;margin-bottom:24px;">Schedule a meeting with our expert team. We'll assess your needs and provide a tailored proposal.</p>
+          <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <input type="hidden" name="form_type" value="consultation" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id_b_name">Full Name *</label>
+                <input type="text" class="form-control" id="id_b_name" name="name" placeholder="Your Full Name" required />
+              </div>
+              <div class="form-group">
+                <label for="id_b_email">Email Address *</label>
+                <input type="email" class="form-control" id="id_b_email" name="email" placeholder="Your Email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id_b_phone">Phone Number *</label>
+                <input type="text" class="form-control" id="id_b_phone" name="phone" placeholder="e.g. 0714712531" required />
+              </div>
+              <div class="form-group">
+                <label for="id_b_service">Service of Interest</label>
+                <input type="text" class="form-control" id="id_b_service" name="service_interest" placeholder="e.g. Renovation, General Construction..." />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id_b_date">Preferred Date *</label>
+                <input type="date" class="form-control" id="id_b_date" name="preferred_date" required />
+              </div>
+              <div class="form-group">
+                <label for="id_b_time">Preferred Time *</label>
+                <input type="time" class="form-control" id="id_b_time" name="preferred_time" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="id_b_message">Additional Details</label>
+              <textarea class="form-control" id="id_b_message" name="message" rows="4" placeholder="Tell us more about your project — size, location, timeline, budget range..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+              <i class="fas fa-calendar-check"></i> Book Consultation
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── GOOGLE MAP ─────────────────────────────────────────────── -->
+<section class="map-section section-pad-sm">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Find Us</span>
+      <h2 class="section-title">Our Location</h2>
+      <div class="divider"></div>
+      <p class="section-sub">Visit us at Nyamasaria Shopping Centre, Kisumu. We're open Monday to Saturday.</p>
+    </div>
+    <div class="map-wrap reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7497853085837!2d34.74!3d-0.115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182aa491c7fa77cd%3A0x2d8e56dbef8e7b14!2sNyamasaria%2C%20Kisumu!5e0!3m2!1sen!2ske!4v1700000000000!5m2!1sen!2ske"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Apex Construction Location – Nyamasaria, Kisumu">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── CTA BANNER ─────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Ready to Build Something Great?</h2>
+        <p>Call us now or send a message. Our team is standing by to turn your construction vision into reality.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="tel:0714712531" class="btn btn-primary">
+          <i class="fas fa-phone"></i> Call 0714 712 531
+        </a>
+        <a href="https://wa.me/254714712531" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  // Activate the booking tab if hash is #book
+  if (window.location.hash === '#book') {
+    document.querySelectorAll('.forms-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.form-panel').forEach(p => p.classList.remove('active'));
+    document.querySelector('[data-tab="booking-form-panel"]')?.classList.add('active');
+    document.getElementById('booking-form-panel')?.classList.add('active');
+  }
+</script>
+{% endblock %}

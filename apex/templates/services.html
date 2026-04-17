@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Our Services – Apex Construction Limited{% endblock %}
+
+{% block content %}
+
+<!-- ── PAGE HERO ─────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="{% url 'home' %}">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,.8);">Services</span>
+    </div>
+    <h1>Our Services</h1>
+    <p>Comprehensive construction and infrastructure solutions delivered with excellence, precision, and professionalism across Kenya.</p>
+  </div>
+</section>
+
+
+<!-- ── SERVICES INTRO ──────────────────────────────────────────── -->
+<section class="section-pad-sm" style="background:var(--grey-bg);">
+  <div class="container" style="text-align:center;">
+    <span class="section-label">What We Offer</span>
+    <h2 class="section-title" style="max-width:640px;margin:0 auto 14px;">
+      End-to-End Construction Solutions
+    </h2>
+    <div class="divider centered"></div>
+    <p style="color:var(--text-body);max-width:620px;margin:0 auto;font-size:1.02rem;">
+      From initial design and planning to final finishing touches, our skilled team handles
+      every aspect of your construction project. Explore our full range of services below.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── ALL SERVICES ──────────────────────────────────────────── -->
+<section class="section-pad" style="background:var(--white);">
+  <div class="container">
+    {% if services %}
+    <div class="services-full-grid">
+      {% for service in services %}
+      <div class="service-full-card reveal">
+        <div class="service-full-img">
+          {% if service.image %}
+            <img src="{{ service.image.url }}" alt="{{ service.title }}" />
+          {% else %}
+            <i class="fas {{ service.icon|default:'fa-hard-hat' }}" style="color:rgba(255,255,255,.25);font-size:4rem;"></i>
+          {% endif %}
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service {{ forloop.counter|stringformat:"02d" }}</span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <!-- Static services (shown when DB is empty) -->
+    <div class="services-full-grid">
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
+          <i class="fas fa-building" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 01</span>
+          <h3>General Construction Services</h3>
+          <p>We undertake full-scale construction projects for residential, commercial, and institutional clients. Our experienced team manages everything from site preparation and foundation to structural framing and external works, delivering durable, high-quality buildings on time and within budget.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
+          <i class="fas fa-drafting-compass" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 02</span>
+          <h3>Design &amp; Planning</h3>
+          <p>Our in-house architects and design engineers create functional, aesthetically refined plans tailored to your vision and budget. We handle concept development, detailed architectural drawings, structural designs, and obtain all necessary approvals from regulatory authorities.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
+          <i class="fas fa-tasks" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 03</span>
+          <h3>Project Management</h3>
+          <p>Expert end-to-end project management ensures your construction project is delivered efficiently. We coordinate contractors, manage procurement, monitor quality, and provide regular progress reports — keeping your project on schedule and on budget at every stage.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
+          <i class="fas fa-paint-roller" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 04</span>
+          <h3>Renovation &amp; Remodeling</h3>
+          <p>Breathe new life into your existing property with our renovation and remodeling services. From complete interior overhauls and room additions to kitchen upgrades, bathroom renovations, and façade improvements, we transform tired spaces into modern, functional environments.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
+          <i class="fas fa-road" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 05</span>
+          <h3>Civil &amp; Infrastructure Works</h3>
+          <p>We design and construct vital civil infrastructure including roads, bridges, drainage systems, water supply networks, and public utilities. Our civil engineering team brings technical expertise to every project, ensuring safe, durable, and code-compliant infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
+          <i class="fas fa-layer-group" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 06</span>
+          <h3>Foundation &amp; Structural Works</h3>
+          <p>A strong structure begins with a solid foundation. Our structural engineering team handles soil assessment, foundation design, deep piling, reinforced concrete works, and structural steel fabrication — ensuring every building we construct stands firmly for generations.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
+          <i class="fas fa-palette" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 07</span>
+          <h3>Finishing Services</h3>
+          <p>Our finishing team delivers premium interior and exterior finishes including plastering, tiling, painting, ceiling installation, flooring, joinery, and decorative elements. Every finish is executed with meticulous attention to detail for a truly polished result.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
+          <i class="fas fa-bolt" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 08</span>
+          <h3>Mechanical, Electrical &amp; Plumbing (MEP)</h3>
+          <p>Our certified MEP specialists design and install complete mechanical, electrical, and plumbing systems. Services include power distribution, wiring, lighting design, water supply, drainage, HVAC, fire suppression systems, and solar energy integration.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
+          <i class="fas fa-leaf" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 09</span>
+          <h3>Landscaping &amp; External Works</h3>
+          <p>Enhance the curb appeal and functionality of your property with our expert landscaping services. We handle garden design, paving, retaining walls, outdoor drainage, irrigation systems, perimeter fencing, and decorative hardscaping for both residential and commercial properties.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
+          <i class="fas fa-wrench" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 10</span>
+          <h3>Maintenance &amp; Facility Management</h3>
+          <p>Protect your investment with our professional property maintenance services. We offer scheduled maintenance programs, emergency repairs, general facility management, and preventive upkeep for buildings of all types — keeping your assets in peak condition year-round.</p>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-img" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
+          <i class="fas fa-star" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        </div>
+        <div class="service-full-body">
+          <span class="service-num">Service 11</span>
+          <h3>Specialized Services</h3>
+          <p>Beyond standard construction, we offer specialized solutions including waterproofing, noise insulation, green building certification support, post-tensioning, construction of industrial facilities, and bespoke structural solutions for unique or complex architectural requirements.</p>
+        </div>
+      </div>
+
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ── CTA ───────────────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-text">
+        <h2>Need a Custom Solution?</h2>
+        <p>Our team is ready to discuss your specific project requirements and provide a tailored proposal. Contact us today for a free consultation.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="{% url 'contact' %}" class="btn btn-primary">
+          <i class="fas fa-calendar-check"></i> Book Consultation
+        </a>
+        <a href="tel:0714712531" class="btn btn-outline">
+          <i class="fas fa-phone"></i> 0714 712 531
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
