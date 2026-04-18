@@ -10,9 +10,9 @@ def home(request):
     featured_projects = []
     testimonials = []
     try:
-        featured_services = Service.objects.filter(is_active=True)[:6]
-        featured_projects = Project.objects.filter(is_featured=True)[:6]
-        testimonials = Testimonial.objects.filter(is_active=True)[:6]
+        featured_services = list(Service.objects.filter(is_active=True)[:6])
+        featured_projects = list(Project.objects.filter(is_featured=True)[:6])
+        testimonials = list(Testimonial.objects.filter(is_active=True)[:6])
     except OperationalError:
         # Database is not yet migrated or available in production.
         featured_services = []
@@ -30,7 +30,7 @@ def home(request):
 def services(request):
     all_services = []
     try:
-        all_services = Service.objects.filter(is_active=True)
+        all_services = list(Service.objects.filter(is_active=True))
     except OperationalError:
         all_services = []
 
@@ -43,9 +43,9 @@ def projects(request):
     ongoing = []
     machines = []
     try:
-        completed = Project.objects.filter(status='completed')
-        ongoing = Project.objects.filter(status='ongoing')
-        machines = MachineHire.objects.filter(is_available=True)
+        completed = list(Project.objects.filter(status='completed'))
+        ongoing = list(Project.objects.filter(status='ongoing'))
+        machines = list(MachineHire.objects.filter(is_available=True))
     except OperationalError:
         completed = []
         ongoing = []
@@ -62,7 +62,7 @@ def projects(request):
 def about(request):
     team = []
     try:
-        team = TeamMember.objects.filter(is_active=True)
+        team = list(TeamMember.objects.filter(is_active=True))
     except OperationalError:
         team = []
 
