@@ -143,37 +143,58 @@
             <input type="hidden" name="form_type" value="consultation" />
             <div class="form-row">
               <div class="form-group">
-                <label for="id_b_name">Full Name *</label>
-                <input type="text" class="form-control" id="id_b_name" name="name" placeholder="Your Full Name" required />
+                <label for="id_name">Full Name *</label>
+                {{ consultation_form.name }}
+                {% if consultation_form.name.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.name.errors.0 }}</span>
+                {% endif %}
               </div>
               <div class="form-group">
-                <label for="id_b_email">Email Address *</label>
-                <input type="email" class="form-control" id="id_b_email" name="email" placeholder="Your Email" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="id_b_phone">Phone Number *</label>
-                <input type="text" class="form-control" id="id_b_phone" name="phone" placeholder="e.g. 0714712531" required />
-              </div>
-              <div class="form-group">
-                <label for="id_b_service">Service of Interest</label>
-                <input type="text" class="form-control" id="id_b_service" name="service_interest" placeholder="e.g. Renovation, General Construction..." />
+                <label for="id_email">Email Address *</label>
+                {{ consultation_form.email }}
+                {% if consultation_form.email.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.email.errors.0 }}</span>
+                {% endif %}
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="id_b_date">Preferred Date *</label>
-                <input type="date" class="form-control" id="id_b_date" name="preferred_date" required />
+                <label for="id_phone">Phone Number *</label>
+                {{ consultation_form.phone }}
+                {% if consultation_form.phone.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.phone.errors.0 }}</span>
+                {% endif %}
               </div>
               <div class="form-group">
-                <label for="id_b_time">Preferred Time *</label>
-                <input type="time" class="form-control" id="id_b_time" name="preferred_time" required />
+                <label for="id_service_interest">Service of Interest</label>
+                {{ consultation_form.service_interest }}
+                {% if consultation_form.service_interest.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.service_interest.errors.0 }}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="id_preferred_date">Preferred Date *</label>
+                {{ consultation_form.preferred_date }}
+                {% if consultation_form.preferred_date.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.preferred_date.errors.0 }}</span>
+                {% endif %}
+              </div>
+              <div class="form-group">
+                <label for="id_preferred_time">Preferred Time *</label>
+                {{ consultation_form.preferred_time }}
+                {% if consultation_form.preferred_time.errors %}
+                  <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.preferred_time.errors.0 }}</span>
+                {% endif %}
               </div>
             </div>
             <div class="form-group">
-              <label for="id_b_message">Additional Details</label>
-              <textarea class="form-control" id="id_b_message" name="message" rows="4" placeholder="Tell us more about your project — size, location, timeline, budget range..."></textarea>
+              <label for="id_message">Additional Details</label>
+              {{ consultation_form.message }}
+              {% if consultation_form.message.errors %}
+                <span style="color:#ef4444;font-size:.8rem;">{{ consultation_form.message.errors.0 }}</span>
+              {% endif %}
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
               <i class="fas fa-calendar-check"></i> Book Consultation
