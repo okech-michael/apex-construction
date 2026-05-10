@@ -9,7 +9,7 @@ __pycache__/
 db.sqlite3
 db.sqlite3-journal
 media/
-staticfiles/
+# staticfiles/  # Uncommented for production deployment
 *.log
 
 # VS Code
