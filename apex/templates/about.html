@@ -149,17 +149,17 @@
             {% if member.name == "Mike Onyango" %}
               <span class="emoji">👨🏽‍💼</span>
             {% elif member.name == "Felix Ochieng'" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/felix-ochieng.jpeg" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/felix-ochieng.jpeg' %}" alt="{{ member.name }}" />
             {% elif member.name == "Maxwell Okoth" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/maxwell.jfif" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/maxwell.jfif' %}" alt="{{ member.name }}" />
             {% elif member.name == "Samuel Oketch" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/samuel.jpeg" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/samuel.jpeg' %}" alt="{{ member.name }}" />
             {% elif member.name == "Reagan Obondo" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/reagan-obondo.jpg" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/reagan-obondo.jpg' %}" alt="{{ member.name }}" />
             {% elif member.name == "Ronex" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/ronex.jfif" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/ronex.jfif' %}" alt="{{ member.name }}" />
             {% elif member.name == "Richard" %}
-              <img src="https://raw.githubusercontent.com/okech-michael/apex-construction/main/staticfiles/images/team/richard.jpg" alt="{{ member.name }}" />
+              <img src="{% static 'images/team/richard.jpg' %}" alt="{{ member.name }}" />
             {% else %}
               {% if member.photo %}
                 <img src="{{ member.photo.url }}" alt="{{ member.name }}" />
