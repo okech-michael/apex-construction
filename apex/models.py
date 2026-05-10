@@ -89,6 +89,34 @@ class MachineHire(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def image_url(self):
+        if self.image and self.image.name:
+            try:
+                if self.image.storage.exists(self.image.name):
+                    return self.image.url
+            except Exception:
+                pass
+
+        name = self.name.lower()
+        if 'excavator' in name:
+            return 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=900&q=80'
+        if 'tipper' in name or 'truck' in name:
+            return 'https://images.unsplash.com/photo-1519821172141-bd363f66d472?auto=format&fit=crop&w=900&q=80'
+        if 'mixer' in name or 'concrete' in name:
+            return 'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=80'
+        if 'compactor' in name or 'roller' in name:
+            return 'https://images.unsplash.com/photo-1556761175-587f7f8bd87e?auto=format&fit=crop&w=900&q=80'
+        if 'crane' in name:
+            return 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80'
+        if 'generator' in name:
+            return 'https://images.unsplash.com/photo-1515394771230-1b72e77f0b95?auto=format&fit=crop&w=900&q=80'
+        if 'water' in name or 'bowser' in name or 'tanker' in name:
+            return 'https://images.unsplash.com/photo-1581093588401-5a13f6f69988?auto=format&fit=crop&w=900&q=80'
+        if 'welding' in name:
+            return 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80'
+        return 'https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=900&q=80'
+
 
 class ContactMessage(models.Model):
     name = models.CharField(max_length=200)

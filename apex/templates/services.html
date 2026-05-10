@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Our Services – Apex Construction Limited{% endblock %}
+{% block title %}Our Services – Ka'sam Construction Enterprise{% endblock %}
 
 {% block content %}
 
@@ -46,7 +46,7 @@
           {% if service.image %}
             <img src="{{ service.image.url }}" alt="{{ service.title }}" />
           {% else %}
-            <i class="fas {{ service.icon|default:'fa-hard-hat' }}" style="color:rgba(255,255,255,.25);font-size:4rem;"></i>
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="{{ service.title }}" />
           {% endif %}
         </div>
         <div class="service-full-body">
@@ -150,13 +150,13 @@
       </div>
 
       <div class="service-full-card reveal">
-        <div class="service-full-img" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
-          <i class="fas fa-leaf" style="color:rgba(255,255,255,.2);font-size:4rem;"></i>
+        <div class="service-full-img">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80" alt="Landscaping & External Works" />
         </div>
         <div class="service-full-body">
           <span class="service-num">Service 09</span>
           <h3>Landscaping &amp; External Works</h3>
-          <p>Enhance the curb appeal and functionality of your property with our expert landscaping services. We handle garden design, paving, retaining walls, outdoor drainage, irrigation systems, perimeter fencing, and decorative hardscaping for both residential and commercial properties.</p>
+          <p>Enhance the appeal, usability, and resilience of your property with our full landscaping and external works service. We deliver garden design, turfing, ornamental planting, walkways, driveways, retaining walls, stormwater drainage, irrigation, outdoor lighting, boundary fencing, and hardscaping—all tailored for residential and commercial developments.</p>
         </div>
       </div>
 

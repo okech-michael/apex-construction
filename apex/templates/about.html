@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}About Us &amp; Our Team – Apex Construction Limited{% endblock %}
+{% block title %}About Us &amp; Our Team – Ka'sam Construction Enterprise{% endblock %}
 
 {% block content %}
 
@@ -13,7 +13,7 @@
       <span>/</span>
       <span style="color:rgba(255,255,255,.8);">About Us</span>
     </div>
-    <h1>About Apex Construction</h1>
+    <h1>About Ka'sam Construction Enterprise</h1>
     <p>A decade and a half of building Kenya's future — one project at a time. Learn who we are, what drives us, and the talented team behind every structure we build.</p>
   </div>
 </section>
@@ -28,7 +28,7 @@
         <h2 class="section-title">Built on Trust, Driven by Excellence</h2>
         <div class="divider"></div>
         <p style="color:var(--text-body);margin-bottom:18px;line-height:1.78;font-size:.97rem;">
-          Apex Construction Limited was founded with a single purpose: to deliver construction services
+          Ka'sam Construction Enterprise was founded with a single purpose: to deliver construction services
           that set a new standard for quality, reliability, and professionalism in Kenya.
           Starting as a small local contractor in Kisumu, we have grown into a full-service
           construction company with a portfolio spanning residential, commercial, industrial,
@@ -63,7 +63,7 @@
 
       <div class="story-img-wrap reveal">
         <div class="story-img">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Apex Construction Team" />
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Ka'sam Construction Enterprise Team" />
         </div>
       </div>
     </div>
@@ -75,7 +75,7 @@
 <section class="section-pad" style="background:var(--grey-bg);">
   <div class="container">
     <div class="section-header centered">
-      <span class="section-label">Why Apex?</span>
+      <span class="section-label">Why Ka'sam?</span>
       <h2 class="section-title">Why Clients Choose Us</h2>
       <div class="divider centered"></div>
     </div>
@@ -107,7 +107,7 @@
           <i class="fas fa-shield-alt"></i>
         </div>
         <h3 style="font-size:1.15rem;margin-bottom:10px;">Safety First</h3>
-        <p style="font-size:.9rem;color:var(--text-body);line-height:1.7;">Health and safety is non-negotiable at Apex. All our sites operate under strict safety protocols, and our workers are fully trained and equipped with appropriate PPE.</p>
+            <p style="font-size:.9rem;color:var(--text-body);line-height:1.7;">Health and safety is non-negotiable at Ka'sam Construction Enterprise. All our sites operate under strict safety protocols, and our workers are fully trained and equipped with appropriate PPE.</p>
       </div>
       <div class="reveal" style="background:var(--white);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-sm);border-top:4px solid var(--accent);">
         <div style="width:52px;height:52px;background:rgba(232,160,32,.12);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:1.3rem;margin-bottom:18px;">
@@ -137,7 +137,7 @@
       <div class="divider centered"></div>
       <p class="section-sub">
         Behind every great project is an exceptional team. Meet the dedicated professionals
-        who bring expertise, passion, and precision to every Apex Construction project.
+        who bring expertise, passion, and precision to every Ka'sam Construction Enterprise project.
       </p>
     </div>
 
@@ -146,16 +146,21 @@
         {% for member in team %}
         <div class="team-card reveal">
           <div class="team-photo">
-            {% if member.photo %}
+            {% if member.name == "Mike Onyango" %}
+              <span class="emoji">👨🏽‍💼</span>
+            {% elif member.photo %}
               <img src="{{ member.photo.url }}" alt="{{ member.name }}" />
             {% else %}
-              <i class="fas fa-user-tie"></i>
+              <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="{{ member.name }}" />
             {% endif %}
           </div>
           <div class="team-body">
             <h3>{{ member.name }}</h3>
             <div class="team-role">{{ member.role }}</div>
-            <p>{{ member.bio|default:"A dedicated professional contributing excellence to every Apex Construction project." }}</p>
+            {% if member.phone %}
+              <div class="team-contact">📞 {{ member.phone }}</div>
+            {% endif %}
+            <p>{{ member.bio|default:"A dedicated professional contributing excellence to every Ka'sam Construction Enterprise project." }}</p>
             <div class="team-socials">
               {% if member.linkedin %}
               <a href="{{ member.linkedin }}" class="team-social-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
@@ -174,8 +179,8 @@
         <!-- Static team members -->
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Felix Ochieng'" />
           </div>
           <div class="team-body">
             <h3>Felix Ochieng'</h3>
@@ -189,8 +194,8 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Maxwell Okoth" />
           </div>
           <div class="team-body">
             <h3>Maxwell Okoth</h3>
@@ -204,13 +209,13 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Samuel Okech" />
           </div>
           <div class="team-body">
             <h3>Samuel Okech</h3>
             <div class="team-role">Construction Advisor</div>
-            <p>Samuel brings deep industry knowledge and strategic insight to every project. His expertise in construction best practices ensures Apex consistently delivers value to its clients.</p>
+            <p>Samuel brings deep industry knowledge and strategic insight to every project. His expertise in construction best practices ensures Ka'sam consistently delivers value to its clients.</p>
             <div class="team-socials">
               <a href="#" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
               <a href="mailto:samuel@apexconstruction.co.ke" class="team-social-btn"><i class="fas fa-envelope"></i></a>
@@ -219,13 +224,13 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Mike Onyango" />
           </div>
           <div class="team-body">
             <h3>Mike Onyango</h3>
             <div class="team-role">Marketer</div>
-            <p>Mike drives Apex's brand presence and client acquisition strategy with dynamic marketing initiatives, building strong relationships and showcasing the company's exceptional work to potential clients.</p>
+            <p>Mike drives Ka'sam's brand presence and client acquisition strategy with dynamic marketing initiatives, building strong relationships and showcasing the company's exceptional work to potential clients.</p>
             <div class="team-socials">
               <a href="#" class="team-social-btn"><i class="fab fa-linkedin-in"></i></a>
               <a href="mailto:mike@apexconstruction.co.ke" class="team-social-btn"><i class="fas fa-envelope"></i></a>
@@ -234,8 +239,8 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#1e3f70,#142d52);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Reagan Obondo" />
           </div>
           <div class="team-body">
             <h3>Reagan Obondo</h3>
@@ -249,8 +254,8 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#0b1f3a,#1e3f70);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Ronex" />
           </div>
           <div class="team-body">
             <h3>Ronex</h3>
@@ -264,8 +269,8 @@
         </div>
 
         <div class="team-card reveal">
-          <div class="team-photo" style="background:linear-gradient(135deg,#142d52,#0b1f3a);">
-            <i class="fas fa-user-tie" style="color:rgba(255,255,255,.25);font-size:3.5rem;"></i>
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="Richard" />
           </div>
           <div class="team-body">
             <h3>Richard</h3>
@@ -290,7 +295,7 @@
     <div class="cta-inner">
       <div class="cta-text">
         <h2>Join Our Growing Team</h2>
-        <p>We are always looking for talented, passionate construction professionals to join Apex Construction. Get in touch to explore career opportunities.</p>
+        <p>We are always looking for talented, passionate construction professionals to join Ka'sam Construction Enterprise. Get in touch to explore career opportunities.</p>
       </div>
       <div class="cta-actions">
         <a href="{% url 'contact' %}" class="btn btn-primary">

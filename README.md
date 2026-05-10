@@ -1,6 +1,6 @@
-# Apex Construction
+# Ka'sam Construction Enterprise
 
-Apex Construction Limited is a Django-based website for a construction company. The project includes:
+Ka'sam Construction Enterprise is a Django-based website for a construction company. The project includes:
 
 - Services, projects, team members, testimonials, and machine hire models
 - A contact page with message and consultation forms

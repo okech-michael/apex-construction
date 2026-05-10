@@ -56,6 +56,6 @@ class ConsultationBookingAdmin(admin.ModelAdmin):
 
 
 # Customize admin site headers
-admin.site.site_header = "Apex Construction Admin"
-admin.site.site_title = "Apex Construction"
-admin.site.index_title = "Welcome to Apex Construction Admin Panel"
+admin.site.site_header = "Ka'sam Construction Enterprise Admin"
+admin.site.site_title = "Ka'sam Construction Enterprise"
+admin.site.index_title = "Welcome to Ka'sam Construction Enterprise Admin Panel"

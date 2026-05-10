@@ -1,5 +1,5 @@
 /* ============================================================
-   APEX CONSTRUCTION LIMITED — Main JavaScript
+   KA'SAM CONSTRUCTION ENTERPRISE — Main JavaScript
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {

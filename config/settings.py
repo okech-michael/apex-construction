@@ -1,5 +1,5 @@
 """
-Django settings for Apex Construction Limited
+Django settings for Ka'sam Construction Enterprise
 """
 
 from pathlib import Path

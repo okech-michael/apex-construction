@@ -1,3 +1,5 @@
+from types import SimpleNamespace
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.db.utils import OperationalError
@@ -33,6 +35,17 @@ def services(request):
         all_services = list(Service.objects.filter(is_active=True))
     except OperationalError:
         all_services = []
+
+    if not any('landscap' in service.title.lower() for service in all_services):
+        landscaping_service = SimpleNamespace(
+            title='Landscaping & External Works',
+            description=('Enhance the appeal, usability, and resilience of your property with our full landscaping '
+                         'and external works service. We deliver garden design, turfing, ornamental planting, walkways, '
+                         'driveways, retaining walls, stormwater drainage, irrigation, outdoor lighting, boundary fencing, '
+                         'and hardscaping—all tailored for residential and commercial developments.'),
+            image=None,
+        )
+        all_services.append(landscaping_service)
 
     context = {'services': all_services}
     return render(request, 'services.html', context)
