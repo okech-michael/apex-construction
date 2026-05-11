@@ -14,13 +14,13 @@ class Service(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     SERVICE_IMAGE_MAP = {
-        'General Construction Services': 'images/General construction.jfif',
-        'Design & Planning': 'images/design work.jpg',
+        'General Construction Services': 'images/general-construction.jfif',
+        'Design & Planning': 'images/design-work.jpg',
         'Project Management': 'images/cart-excavator.jpg',
-        'Renovation & Remodeling': 'images/renovation work.jfif',
-        'Civil & Infrastructure Works': 'images/civil and infrustructure works.webp',
-        'Mechanical, Electrical & Plumbing (MEP)': 'images/design, mechanical and electrical works.jfif',
-        'Landscaping & External Works': 'images/landscaping work.webp',
+        'Renovation & Remodeling': 'images/renovation-work.jfif',
+        'Civil & Infrastructure Works': 'images/civil-and-infrastructure-works.webp',
+        'Mechanical, Electrical & Plumbing (MEP)': 'images/design-mechanical-electrical-works.jfif',
+        'Landscaping & External Works': 'images/landscaping-work.webp',
     }
 
     class Meta:
