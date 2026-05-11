@@ -152,7 +152,7 @@
 
       <div class="intro-image-wrap reveal">
         <div class="intro-img-main">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+          <img src="{% static 'images/General construction.jfif' %}"
                alt="Ka'sam Construction Enterprise at work" loading="lazy" decoding="async" />
         </div>
         <div class="intro-badge-box">
@@ -199,40 +199,72 @@
         {% endfor %}
       {% else %}
         <!-- Static fallback services -->
-        {% for item in "123456"|make_list %}
         <div class="service-card reveal">
           <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Service placeholder" loading="lazy" decoding="async" />
+            <img src="{% static 'images/General construction.jfif' %}" alt="General Construction" loading="lazy" decoding="async" />
           </div>
           <div class="service-card-body">
-            <div class="service-card-icon">
-              <i class="fas fa-tools"></i>
-            </div>
-            {% if forloop.counter == 1 %}
+            <div class="service-card-icon"><i class="fas fa-building"></i></div>
             <h3>General Construction</h3>
             <p>Full-scale residential and commercial construction projects delivered with precision and quality craftsmanship.</p>
-            {% elif forloop.counter == 2 %}
-            <h3>Design &amp; Planning</h3>
-            <p>Expert architectural design and project planning services to bring your vision to life before the first brick is laid.</p>
-            {% elif forloop.counter == 3 %}
-            <h3>Project Management</h3>
-            <p>End-to-end project oversight ensuring timely delivery, cost control, and quality standards throughout construction.</p>
-            {% elif forloop.counter == 4 %}
-            <h3>Renovation &amp; Remodeling</h3>
-            <p>Transform existing structures with modern upgrades, interior remodeling, and complete renovation services.</p>
-            {% elif forloop.counter == 5 %}
-            <h3>Civil &amp; Infrastructure</h3>
-            <p>Roads, drainage systems, bridges, and public infrastructure built to the highest engineering standards.</p>
-            {% else %}
-            <h3>MEP Services</h3>
-            <p>Complete mechanical, electrical, and plumbing installations handled by certified, experienced technicians.</p>
-            {% endif %}
-            <a href="{% url 'services' %}" class="service-link">
-              Learn More <i class="fas fa-arrow-right"></i>
-            </a>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
-        {% endfor %}
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="{% static 'images/design work.jpg' %}" alt="Design &amp; Planning" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-drafting-compass"></i></div>
+            <h3>Design &amp; Planning</h3>
+            <p>Expert architectural design and project planning services to bring your vision to life before the first brick is laid.</p>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="{% static 'images/renovation work.jfif' %}" alt="Renovation &amp; Remodeling" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-paint-roller"></i></div>
+            <h3>Renovation &amp; Remodeling</h3>
+            <p>Transform existing structures with modern upgrades, interior remodeling, and complete renovation services.</p>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="{% static 'images/civil and infrustructure works.webp' %}" alt="Civil &amp; Infrastructure" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-road"></i></div>
+            <h3>Civil &amp; Infrastructure</h3>
+            <p>Roads, drainage systems, bridges, and public infrastructure built to the highest engineering standards.</p>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="{% static 'images/landscaping work.webp' %}" alt="Landscaping &amp; External Works" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-leaf"></i></div>
+            <h3>Landscaping &amp; External Works</h3>
+            <p>Garden design, driveways, retaining walls, and outdoor works that enhance the appeal of your property.</p>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-card-img">
+            <img src="{% static 'images/design, mechanical and electrical works.jfif' %}" alt="MEP Services" loading="lazy" decoding="async" />
+          </div>
+          <div class="service-card-body">
+            <div class="service-card-icon"><i class="fas fa-bolt"></i></div>
+            <h3>MEP Services</h3>
+            <p>Complete mechanical, electrical, and plumbing installations handled by certified, experienced technicians.</p>
+            <a href="{% url 'services' %}" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
       {% endif %}
     </div>
 
@@ -266,7 +298,7 @@
             {% if project.image %}
               <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="{{ project.title }}" loading="lazy" decoding="async" />
+              <img src="{% static 'images/General construction.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="project-overlay">
@@ -280,7 +312,7 @@
         <!-- Static fallback projects -->
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Kisumu Commercial Complex" loading="lazy" decoding="async" />
+            <img src="{% static 'images/maxwell.webp' %}" alt="Kisumu Commercial Complex" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -290,7 +322,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Lakeview Residential Estate" loading="lazy" decoding="async" />
+            <img src="{% static 'images/lake-view-estate.jfif' %}" alt="Lakeview Residential Estate" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -300,7 +332,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Nyalenda Road Infrastructure" loading="lazy" decoding="async" />
+            <img src="{% static 'images/nyalenda-road-construction.jfif' %}" alt="Nyalenda Road Infrastructure" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-ongoing">Ongoing</span>
