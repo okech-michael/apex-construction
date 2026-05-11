@@ -46,8 +46,18 @@
           <div class="project-full-img">
             {% if project.image %}
               <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 1 %}
+              <img src="{% static 'images/tower-crane.jpg' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 2 %}
+              <img src="{% static 'images/GEnerator-vibrator.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 3 %}
+              <img src="{% static 'images/water-bowser.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 4 %}
+              <img src="{% static 'images/welding-machine.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 5 %}
+              <img src="{% static 'images/design-work.jpg' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="{% static 'images/general-construction.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+              <img src="{% static 'images/civil-and-infrastructure-works.webp' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="project-full-body">
@@ -65,7 +75,7 @@
         <!-- Static completed projects -->
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Kisumu CBD Commercial Complex" loading="lazy" decoding="async" />
+            <img src="{% static 'images/tower-crane.jpg' %}" alt="Kisumu CBD Commercial Complex" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-completed" style="margin-bottom:10px;display:inline-block;">Completed</span>
@@ -93,7 +103,7 @@
         </div>
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Maseno University Science Block" loading="lazy" decoding="async" />
+            <img src="{% static 'images/GEnerator-vibrator.jfif' %}" alt="Maseno University Science Block" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-completed" style="margin-bottom:10px;display:inline-block;">Completed</span>
@@ -107,7 +117,7 @@
         </div>
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Rift Valley Logistics Warehouse" loading="lazy" decoding="async" />
+            <img src="{% static 'images/water-bowser.jfif' %}" alt="Rift Valley Logistics Warehouse" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-completed" style="margin-bottom:10px;display:inline-block;">Completed</span>
@@ -121,7 +131,7 @@
         </div>
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Nyamasaria Community Centre" loading="lazy" decoding="async" />
+            <img src="{% static 'images/welding-machine.jfif' %}" alt="Nyamasaria Community Centre" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-completed" style="margin-bottom:10px;display:inline-block;">Completed</span>
@@ -158,8 +168,12 @@
           <div class="project-full-img">
             {% if project.image %}
               <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 1 %}
+              <img src="{% static 'images/tipper-truck.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+            {% elif forloop.counter == 2 %}
+              <img src="{% static 'images/compactor-roler.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="{% static 'images/general-construction.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
+              <img src="{% static 'images/design-mechanical-electrical-works.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="project-full-body">
@@ -191,7 +205,7 @@
         </div>
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Kisumu County Referral Hospital Wing" loading="lazy" decoding="async" />
+            <img src="{% static 'images/design-mechanical-electrical-works.jfif' %}" alt="Kisumu County Referral Hospital Wing" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-ongoing" style="margin-bottom:10px;display:inline-block;">Ongoing</span>
@@ -205,7 +219,7 @@
         </div>
         <div class="project-full-card reveal">
           <div class="project-full-img">
-            <img src="{% static 'images/general-construction.jfif' %}" alt="Lakeside Boutique Hotel" loading="lazy" decoding="async" />
+            <img src="{% static 'images/maxwell.webp' %}" alt="Lakeside Boutique Hotel" loading="lazy" decoding="async" />
           </div>
           <div class="project-full-body">
             <span class="project-status status-ongoing" style="margin-bottom:10px;display:inline-block;">Ongoing</span>
