@@ -3,10 +3,12 @@ from types import SimpleNamespace
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.db.utils import OperationalError
+from django.views.decorators.cache import cache_page
 from .models import Service, Project, TeamMember, Testimonial, MachineHire
 from .forms import ContactForm, ConsultationForm
 
 
+@cache_page(60 * 15)
 def home(request):
     featured_services = []
     featured_projects = []
@@ -29,6 +31,7 @@ def home(request):
     return render(request, 'home.html', context)
 
 
+@cache_page(60 * 15)
 def services(request):
     all_services = []
     try:
@@ -51,6 +54,7 @@ def services(request):
     return render(request, 'services.html', context)
 
 
+@cache_page(60 * 15)
 def projects(request):
     completed = []
     ongoing = []
@@ -72,6 +76,7 @@ def projects(request):
     return render(request, 'projects.html', context)
 
 
+@cache_page(60 * 15)
 def about(request):
     team = []
     try:

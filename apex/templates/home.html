@@ -153,7 +153,7 @@
       <div class="intro-image-wrap reveal">
         <div class="intro-img-main">
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-               alt="Ka'sam Construction Enterprise at work" />
+               alt="Ka'sam Construction Enterprise at work" loading="lazy" decoding="async" />
         </div>
         <div class="intro-badge-box">
           <div class="num">15+</div>
@@ -184,21 +184,21 @@
         <div class="service-card reveal">
           <div class="service-card-img">
             {% if service.image %}
-              <img src="{{ service.image.url }}" alt="{{ service.title }}" />
+              <img src="{{ service.image.url }}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "General Construction Services" %}
-              <img src="{% static 'images/General construction.jfif' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/General construction.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "Design & Planning" %}
-              <img src="{% static 'images/design work.jpg' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/design work.jpg' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "Project Management" %}
-              <img src="{% static 'images/cart-excavator.jpg' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/cart-excavator.jpg' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "Renovation & Remodeling" %}
-              <img src="{% static 'images/renovation work.jfif' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/renovation work.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "Civil & Infrastructure Works" %}
-              <img src="{% static 'images/civil and infrustructure works.webp' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/civil and infrustructure works.webp' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% elif service.title == "Mechanical, Electrical & Plumbing (MEP)" %}
-              <img src="{% static 'images/design, mechanical and electrical works.jfif' %}" alt="{{ service.title }}" />
+              <img src="{% static 'images/design, mechanical and electrical works.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="{{ service.title }}" />
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="{{ service.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="service-card-body">
@@ -218,7 +218,7 @@
         {% for item in "123456"|make_list %}
         <div class="service-card reveal">
           <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Service placeholder" />
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Service placeholder" loading="lazy" decoding="async" />
           </div>
           <div class="service-card-body">
             <div class="service-card-icon">
@@ -280,9 +280,9 @@
         <div class="project-card reveal">
           <div class="project-img">
             {% if project.image %}
-              <img src="{{ project.image.url }}" alt="{{ project.title }}" />
+              <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="{{ project.title }}" />
+              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="project-overlay">
@@ -296,7 +296,7 @@
         <!-- Static fallback projects -->
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Kisumu Commercial Complex" />
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Kisumu Commercial Complex" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -306,7 +306,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Lakeview Residential Estate" />
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Lakeview Residential Estate" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -316,7 +316,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Nyalenda Road Infrastructure" />
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Nyalenda Road Infrastructure" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-ongoing">Ongoing</span>
@@ -363,7 +363,7 @@
             <div class="testimonial-author">
               <div class="testimonial-photo">
                 {% if t.photo %}
-                  <img src="{{ t.photo.url }}" alt="{{ t.client_name }}" />
+                  <img src="{{ t.photo.url }}" alt="{{ t.client_name }}" loading="lazy" decoding="async" />
                 {% else %}
                   <i class="fas fa-user"></i>
                 {% endif %}
