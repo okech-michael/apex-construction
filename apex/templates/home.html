@@ -152,7 +152,7 @@
 
       <div class="intro-image-wrap reveal">
         <div class="intro-img-main">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+          <img src="{% static 'images/general-construction.jfif' %}"
                alt="Ka'sam Construction Enterprise at work" loading="lazy" decoding="async" />
         </div>
         <div class="intro-badge-box">
@@ -202,7 +202,7 @@
         {% for item in "123456"|make_list %}
         <div class="service-card reveal">
           <div class="service-card-img">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Service placeholder" loading="lazy" decoding="async" />
+            <img src="{% static 'images/general-construction.jfif' %}" alt="Service placeholder" loading="lazy" decoding="async" />
           </div>
           <div class="service-card-body">
             <div class="service-card-icon">
@@ -266,7 +266,7 @@
             {% if project.image %}
               <img src="{{ project.image.url }}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% else %}
-              <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="{{ project.title }}" loading="lazy" decoding="async" />
+              <img src="{% static 'images/general-construction.jfif' %}" alt="{{ project.title }}" loading="lazy" decoding="async" />
             {% endif %}
           </div>
           <div class="project-overlay">
@@ -280,7 +280,7 @@
         <!-- Static fallback projects -->
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Kisumu Commercial Complex" loading="lazy" decoding="async" />
+            <img src="{% static 'images/general-construction.jfif' %}" alt="Kisumu Commercial Complex" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -290,7 +290,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Lakeview Residential Estate" loading="lazy" decoding="async" />
+            <img src="{% static 'images/lake-view-estate.jfif' %}" alt="Lakeview Residential Estate" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-completed">Completed</span>
@@ -300,7 +300,7 @@
         </div>
         <div class="project-card reveal" style="height:300px;">
           <div class="project-img" style="height:100%;">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Nyalenda Road Infrastructure" loading="lazy" decoding="async" />
+            <img src="{% static 'images/nyalenda-road-construction.jfif' %}" alt="Nyalenda Road Infrastructure" loading="lazy" decoding="async" />
           </div>
           <div class="project-overlay">
             <span class="project-status status-ongoing">Ongoing</span>
