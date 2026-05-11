@@ -43,25 +43,7 @@
       {% for service in services %}
       <div class="service-full-card reveal">
         <div class="service-full-img">
-          {% if service.image %}
-            <img src="{{ service.image.url }}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "General Construction Services" %}
-            <img src="{% static 'images/General construction.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Design & Planning" %}
-            <img src="{% static 'images/design work.jpg' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Project Management" %}
-            <img src="{% static 'images/cart-excavator.jpg' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Renovation & Remodeling" %}
-            <img src="{% static 'images/renovation work.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Civil & Infrastructure Works" %}
-            <img src="{% static 'images/civil and infrustructure works.webp' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Mechanical, Electrical & Plumbing (MEP)" %}
-            <img src="{% static 'images/design, mechanical and electrical works.jfif' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% elif service.title == "Landscaping & External Works" %}
-            <img src="{% static 'images/landscaping work.webp' %}" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% else %}
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="{{ service.title }}" loading="lazy" decoding="async" />
-          {% endif %}
+          <img src="{{ service.image_url }}" alt="{{ service.title }}" loading="lazy" decoding="async" />
         </div>
         <div class="service-full-body">
           <span class="service-num">Service {{ forloop.counter|stringformat:"02d" }}</span>

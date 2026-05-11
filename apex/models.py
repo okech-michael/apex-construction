@@ -1,6 +1,9 @@
 from django.db import models
 
 
+from django.conf import settings
+
+
 class Service(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -10,11 +13,30 @@ class Service(models.Model):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    SERVICE_IMAGE_MAP = {
+        'General Construction Services': 'images/General construction.jfif',
+        'Design & Planning': 'images/design work.jpg',
+        'Project Management': 'images/cart-excavator.jpg',
+        'Renovation & Remodeling': 'images/renovation work.jfif',
+        'Civil & Infrastructure Works': 'images/civil and infrustructure works.webp',
+        'Mechanical, Electrical & Plumbing (MEP)': 'images/design, mechanical and electrical works.jfif',
+        'Landscaping & External Works': 'images/landscaping work.webp',
+    }
+
     class Meta:
         ordering = ['order', 'title']
 
     def __str__(self):
         return self.title
+
+    @property
+    def image_url(self):
+        if self.image and getattr(self.image, 'url', None):
+            return self.image.url
+        fallback = self.SERVICE_IMAGE_MAP.get(self.title)
+        if fallback:
+            return f"{settings.STATIC_URL}{fallback}"
+        return 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80'
 
 
 class Project(models.Model):
@@ -51,11 +73,30 @@ class TeamMember(models.Model):
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
+    TEAM_PHOTO_MAP = {
+        "Felix Ochieng'": 'images/team/felix-ochieng.jpeg',
+        'Maxwell Okoth': 'images/team/maxwell.jfif',
+        'Samuel Oketch': 'images/team/samuel.jpeg',
+        'Mike Onyango': 'images/team/mica.png',
+        'Reagan Obondo': 'images/team/reagan-obondo.jpg',
+        'Ronex': 'images/team/ronex.jfif',
+        'Richard': 'images/team/richard.jpg',
+    }
+
     class Meta:
         ordering = ['order', 'name']
 
     def __str__(self):
         return f"{self.name} – {self.role}"
+
+    @property
+    def photo_url(self):
+        if self.photo and getattr(self.photo, 'url', None):
+            return self.photo.url
+        fallback = self.TEAM_PHOTO_MAP.get(self.name)
+        if fallback:
+            return f"{settings.STATIC_URL}{fallback}"
+        return 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80'
 
 
 class Testimonial(models.Model):

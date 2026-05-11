@@ -146,27 +146,7 @@
         {% for member in team %}
         <div class="team-card reveal">
           <div class="team-photo">
-            {% if member.name == "Mike Onyango" %}
-              <span class="emoji">👨🏽‍💼</span>
-            {% elif member.name == "Felix Ochieng'" %}
-              <img src="{% static 'images/team/felix-ochieng.jpeg' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% elif member.name == "Maxwell Okoth" %}
-              <img src="{% static 'images/team/maxwell.jfif' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% elif member.name == "Samuel Oketch" %}
-              <img src="{% static 'images/team/samuel.jpeg' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% elif member.name == "Reagan Obondo" %}
-              <img src="{% static 'images/team/reagan-obondo.jpg' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% elif member.name == "Ronex" %}
-              <img src="{% static 'images/team/ronex.jfif' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% elif member.name == "Richard" %}
-              <img src="{% static 'images/team/richard.jpg' %}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-            {% else %}
-              {% if member.photo %}
-                <img src="{{ member.photo.url }}" alt="{{ member.name }}" loading="lazy" decoding="async" />
-              {% else %}
-                <img src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80" alt="{{ member.name }}" loading="lazy" decoding="async" />
-              {% endif %}
-            {% endif %}
+            <img src="{{ member.photo_url }}" alt="{{ member.name }}" loading="lazy" decoding="async" />
           </div>
           <div class="team-body">
             <h3>{{ member.name }}</h3>
