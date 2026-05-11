@@ -351,9 +351,9 @@ p  { color: var(--text-body); font-size: 1rem; font-weight: 400; }
   transition: opacity 1.2s ease;
 }
 .hero-slide.active { opacity: 1; }
-.hero-slide-1 { background-image: url('../images/general-construction.jfif'); }
-.hero-slide-2 { background-image: url('../images/lake-view-estate.jfif'); }
-.hero-slide-3 { background-image: url('../images/nyalenda-road-construction.jfif'); }
+.hero-slide-1 { background-image: url('../images/nice-plan.jfif'); }
+.hero-slide-2 { background-image: url('../images/construction plan.jfif'); }
+.hero-slide-3 { background-image: url('../images/site-works.jfif'); }
 
 .hero-overlay {
   position: absolute;
