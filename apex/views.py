@@ -1,11 +1,56 @@
 from types import SimpleNamespace
 
+from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.db.utils import OperationalError
 from django.views.decorators.cache import cache_page
 from .models import Service, Project, TeamMember, Testimonial, MachineHire
 from .forms import ContactForm, ConsultationForm
+
+
+def build_service_fallback(title, description, static_image):
+    return SimpleNamespace(
+        title=title,
+        description=description,
+        image=None,
+        image_url=f"{settings.STATIC_URL}{static_image}",
+        icon='fa-tools',
+    )
+
+
+DEFAULT_SERVICES = [
+    build_service_fallback(
+        'General Construction Services',
+        'We undertake full-scale construction projects for residential, commercial, and institutional clients. Our experienced team manages everything from site preparation and foundation to structural framing and external works, delivering durable, high-quality buildings on time and within budget.',
+        'images/General construction.jfif',
+    ),
+    build_service_fallback(
+        'Design & Planning',
+        'Our in-house architects and design engineers create functional, aesthetically refined plans tailored to your vision and budget. We handle concept development, detailed architectural drawings, structural designs, and obtain all necessary approvals from regulatory authorities.',
+        'images/design work.jpg',
+    ),
+    build_service_fallback(
+        'Project Management',
+        'Expert end-to-end project management ensures your construction project is delivered efficiently. We coordinate contractors, manage procurement, monitor quality, and provide regular progress reports — keeping your project on schedule and on budget at every stage.',
+        'images/cart-excavator.jpg',
+    ),
+    build_service_fallback(
+        'Renovation & Remodeling',
+        'Breathe new life into your existing property with our renovation and remodeling services. From complete interior overhauls and room additions to kitchen upgrades, bathroom renovations, and façade improvements, we transform tired spaces into modern, functional environments.',
+        'images/renovation work.jfif',
+    ),
+    build_service_fallback(
+        'Civil & Infrastructure Works',
+        'We design and construct vital civil infrastructure including roads, bridges, drainage systems, water supply networks, and public utilities. Our civil engineering team brings technical expertise to every project, ensuring safe, durable, and code-compliant infrastructure.',
+        'images/civil and infrustructure works.webp',
+    ),
+    build_service_fallback(
+        'Mechanical, Electrical & Plumbing (MEP)',
+        'Complete mechanical, electrical, and plumbing installations handled by certified, experienced technicians. We provide dependable MEP solutions for buildings, ensuring performance, safety, and compliance across all systems.',
+        'images/design, mechanical and electrical works.jfif',
+    ),
+]
 
 
 @cache_page(60 * 15, key_prefix='v2')
@@ -39,14 +84,16 @@ def services(request):
     except OperationalError:
         all_services = []
 
-    if not any('landscap' in service.title.lower() for service in all_services):
-        landscaping_service = SimpleNamespace(
-            title='Landscaping & External Works',
-            description=('Enhance the appeal, usability, and resilience of your property with our full landscaping '
-                         'and external works service. We deliver garden design, turfing, ornamental planting, walkways, '
-                         'driveways, retaining walls, stormwater drainage, irrigation, outdoor lighting, boundary fencing, '
-                         'and hardscaping—all tailored for residential and commercial developments.'),
-            image=None,
+    if not all_services:
+        all_services = DEFAULT_SERVICES.copy()
+    elif not any('landscap' in service.title.lower() for service in all_services):
+        landscaping_service = build_service_fallback(
+            'Landscaping & External Works',
+            ('Enhance the appeal, usability, and resilience of your property with our full landscaping '
+             'and external works service. We deliver garden design, turfing, ornamental planting, walkways, '
+             'driveways, retaining walls, stormwater drainage, irrigation, outdoor lighting, boundary fencing, '
+             'and hardscaping—all tailored for residential and commercial developments.'),
+            'images/landscaping work.webp',
         )
         all_services.append(landscaping_service)
 
