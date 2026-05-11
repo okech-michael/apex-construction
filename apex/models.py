@@ -91,11 +91,11 @@ class TeamMember(models.Model):
 
     @property
     def photo_url(self):
-        if self.photo and getattr(self.photo, 'url', None):
-            return self.photo.url
         fallback = self.TEAM_PHOTO_MAP.get(self.name)
         if fallback:
             return f"{settings.STATIC_URL}{fallback}"
+        if self.photo and getattr(self.photo, 'url', None):
+            return self.photo.url
         return 'https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80'
 
 
